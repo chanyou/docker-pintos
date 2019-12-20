@@ -11,7 +11,7 @@ docker pull johnstarich/pintos:v1.0
 
 2) Test with the following:
 ```bash
-docker run --rm -it johnstarich/pintos:v1.0
+docker run -it --entrypoint /bin/bash johnstarich/pintos:v1.0
 root@52bab93f4f85:/pintos# pintos -q run alarm-multiple
     <snip logs>
     (alarm-multiple) end
