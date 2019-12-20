@@ -46,6 +46,11 @@ root@fee7c5371398:/pintos# echo 'Hello World!'
 root@fee7c5371398:/pintos# exit
 ```
 
+## Execution
+   
+```bash
+docker exec -it pintos bash
+```
 
 ## Miscellaneous Docker commands
 
