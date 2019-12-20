@@ -4,6 +4,21 @@ Pintos in a Docker container
 
 ## Setup
 
+
+### Easy Way 
+
+execute setup.sh
+
+### Manual
+
+0) Prepare the pintos project code
+
+Download the code from the below:
+
+http://www.stanford.edu/class/cs140/projects/pintos/pintos.tar.gz
+
+And, unzip the code.
+
 1) Pull the image
 ```bash
 docker pull johnstarich/pintos:v1.0
@@ -25,21 +40,12 @@ root@52bab93f4f85:/pintos# pintos -q run alarm-multiple
 
 3) If the above worked, then you should be all set to run your own persistent Pintos container
 ```bash
-docker run --detach --name pintos johnstarich/pintos:v1.0
+docker run --detach --name pintos --volume (your src folder location of pintos project):/pintos johnstarich/pintos:v1.0
 docker exec -it pintos bash
 root@fee7c5371398:/pintos# echo 'Hello World!'
 root@fee7c5371398:/pintos# exit
 ```
 
-## Using your code
-
-To use your code in the container, mount your project directory into the container using Docker volumes.
-
-To use your project directory instead of the current working directory, just replace `$PWD` with your project path.
-
-```bash
-docker run --detach --name pintos --volume $PWD:/pintos johnstarich/pintos:v1.0
-```
 
 ## Miscellaneous Docker commands
 
